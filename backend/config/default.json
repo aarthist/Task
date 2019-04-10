@@ -1,0 +1,12 @@
+{
+    "http": {
+        "host":"localhost",
+        "port":3000,
+        "secure": false
+    },
+    "mongo": {
+        "host":"localhost",
+        "port":27017,
+        "database":"PhoneDirectory"
+    }
+}
