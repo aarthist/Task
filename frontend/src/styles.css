@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.card-margin {
+    margin: 10px;
+}
+
+.card-margin-top20 {
+    padding: 20px;
+    text-align: center;
+    background: #aac6ca;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #e6e6e6 !important;
+}
+
+.card-title {
+    color: #17a2b8;
+    text-align: center;
+    margin-bottom: 10px;
+}

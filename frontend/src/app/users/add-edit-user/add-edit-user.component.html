@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="card">
+  <div class="form-panel">
+    <div class="mx-auto card-header">
+      <!-- <strong><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Client</strong> -->
+      <span *ngIf="!isEdit"><i class='fa fa-user-plus'></i>&nbsp;&nbsp;{{title}}</span>
+      <span *ngIf="isEdit"><i class="fa fa-pencil"></i>&nbsp;&nbsp;{{title}}</span>
+      <button type="button" class="btn btn-info btn-sm float-right" routerLink="/users">
+        <i class="fa fa-reply"></i>&nbsp;&nbsp;Back
+      </button>
+    </div>
+    <!-- <div class="row"> -->
+      <form [formGroup]="addEditUserForm" class="form-body form-horizontal">
+        <div class="col-12 row">
+          <div class="col-6">
+            <label for="username">User Name
+              <span class="required">*</span>
+            </label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="username" />
+            </div>
+            <div class="form-error-msg">
+              <div *ngIf="addEditUserForm.controls['username'].errors && (!addEditUserForm.controls['username'].pristine || formSubmitted)" class="err-msg">
+                <div *ngIf="addEditUserForm.controls['username'].errors.required">Please Enter User Name</div>
+                <div *ngIf="addEditUserForm.controls['username'].errors.checkNamePattern">User Name should have Alphabets only!</div>
+              </div>
+            </div>
+            <label for="name">Name
+              <span class="required">*</span>
+            </label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="name" />
+            </div>
+            <div class="form-error-msg">
+              <div *ngIf="addEditUserForm.controls['name'].errors && (!addEditUserForm.controls['name'].pristine || formSubmitted)" class="err-msg">
+                <div *ngIf="addEditUserForm.controls['name'].errors.required">Please Enter User Full Name</div>
+                <div *ngIf="addEditUserForm.controls['name'].errors.checkNamePattern">User Name should have Alphabets only!</div>
+              </div>
+            </div>
+            <label for="email">E-mail
+              <span class="required">*</span>
+            </label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="email" />
+            </div>
+            <div class="form-error-msg">
+              <div *ngIf="addEditUserForm.controls['email'].errors && (!addEditUserForm.controls['email'].pristine || formSubmitted)" class="err-msg">
+                <div *ngIf="addEditUserForm.controls['email'].errors.required">Please Enter Email</div>
+              </div>
+            </div>
+            <label for="phone">Phone Number
+              <span class="required">*</span>
+            </label>
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="phone" />
+            </div>
+            <div class="form-error-msg">
+              <div *ngIf="addEditUserForm.controls['phone'].errors && (!addEditUserForm.controls['phone'].pristine || formSubmitted)" class="err-msg">
+                <div *ngIf="addEditUserForm.controls['phone'].errors.required">Please Enter Phone Number</div>
+              </div>
+            </div>
+            <label for="website">Website
+                <span class="required">*</span>
+              </label>
+              <div class="input-group">
+                <input type="text" class="form-control" formControlName="website" />
+              </div>
+              <div class="form-error-msg">
+                <div *ngIf="addEditUserForm.controls['website'].errors && (!addEditUserForm.controls['website'].pristine || formSubmitted)" class="err-msg">
+                  <div *ngIf="addEditUserForm.controls['website'].errors.required">Please Enter Phone Number</div>
+                </div>
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="" [formGroup]="addEditUserForm.get('address')">
+                  <label for="street">Street
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="street" />
+                  </div>
+                  
+                  <label for="suite">Suite
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="suite" />
+                  </div>
+                  
+                  <label for="city">City
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="city" />
+                  </div>
+                  
+                  <label for="zipcode">Zip Code
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="zipcode" />
+                  </div>
+                 
+                </div>
+                <div class="" [formGroup]="addEditUserForm.get('company')">
+                  <label for="name">Company Name
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="name" />
+                  </div>
+                 
+                  <label for="catchPhrase">Catch Pharse
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="catchPhrase" />
+                  </div>
+                
+                  <label for="bs">BS
+                    <span class="required">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="bs" />
+                  </div>
+                  
+                </div>
+          </div>
+            
+        </div>
+        <div class="col-12 text-center mt-3">
+          <button class="btn btn-info" *ngIf="!isEdit" (click)="onSubmit()">Save</button>&nbsp;&nbsp;
+            <button class="btn btn-info" *ngIf="isEdit" (click)="onUpdate()">Update</button>&nbsp;&nbsp;
+            <button class="btn btn-reset" (click)="formReset()">Reset</button>
+        </div>
+      </form>
+    <!-- </div> -->
+  </div>
+  </div>
+</div>

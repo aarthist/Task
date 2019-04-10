@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card-margin-top20 row">
+    <div class="col-6">
+        <h3>Users</h3>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-info pull-right" routerLink="/add-user" >Add User</button>
+    </div>
+  </div>
+  <div class="card card-margin" *ngFor="let user of data">
+    <div class="card-body col-12 row">
+      <h5 class="card-title col-12">{{user.username}}</h5>
+      <div class="col-6">
+        <h6 class="card-subtitle mb-2 text-muted">Personal Detail</h6>
+        <p class="card-text">{{user.name}}</p>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text">{{user.phone}}</p>
+        <p class="card-text">
+          <span>{{user.address.suite}}, </span>
+          <span>{{user.address.street}}, </span>
+          <span>{{user.address.city}} - {{user.address.zipcode}}</span>
+        </p>
+      </div>
+      <div class="col-6">
+          <h6 class="card-subtitle mb-2 text-muted">Work Detail</h6>
+          <p class="card-link">{{user.website}}</p>
+          <p class="card-text">
+            <span>{{user.company.name}}, </span>
+            <span>{{user.company.catchPhrase}}, </span>
+            <span>{{user.company.bs}}</span>
+          </p>
+      </div>
+      <div class="col-12">
+          <button class="btn btn-primary" (click)="editUser(user.id)">Edit</button>&nbsp;&nbsp;
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
