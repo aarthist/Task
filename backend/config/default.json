@@ -8,5 +8,12 @@
         "host":"localhost",
         "port":27017,
         "database":"PhoneDirectory"
-    }
+    },
+    "sql": {
+        "host": "localhost",
+        "user": "root", 
+        "password": "",
+        "database": "PhoneDirectory"
+    },  
+    "databaseConnetion": "SQl"
 }
